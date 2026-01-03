@@ -1,0 +1,750 @@
+.trip-detail-page {
+  min-height: calc(100vh - 80px);
+  padding: 40px 0;
+}
+
+.trip-header {
+  margin-bottom: 30px;
+}
+
+.trip-header-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.trip-title {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.btn-back {
+  background: var(--dark-surface-light);
+  border: 2px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-back:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  background: rgba(99, 102, 241, 0.1);
+  transform: translateX(-3px);
+}
+
+.trip-info {
+  margin-top: 30px;
+}
+
+.trip-route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 40px 30px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(236, 72, 153, 0.15) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.route-city {
+  flex: 1;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.route-city.departure {
+  border-right: 2px solid rgba(99, 102, 241, 0.3);
+  padding-right: 40px;
+}
+
+.route-city.arrival {
+  border-left: 2px solid rgba(236, 72, 153, 0.3);
+  padding-left: 40px;
+}
+
+.city-name {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.location-name {
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.datetime {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.datetime .date {
+  display: inline-block;
+  padding: 6px 14px;
+  background: var(--dark-surface);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.datetime .time {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  border-radius: 12px;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.route-arrow-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 30px;
+  flex-shrink: 0;
+}
+
+.route-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
+}
+
+.route-arrow {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.trip-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 25px;
+  background: var(--dark-surface-light);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--dark-surface);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.summary-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.summary-icon {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(236, 72, 153, 0.2) 100%);
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.summary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.summary-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.summary-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.summary-value.price {
+  color: var(--primary-color);
+  font-size: 20px;
+}
+
+.summary-value.highlight {
+  color: var(--success-color);
+}
+
+.seat-selection {
+  margin-top: 30px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.seat-selection h2 {
+  margin-bottom: 30px;
+  color: var(--text-primary);
+}
+
+.wagon-section {
+  margin-bottom: 40px;
+}
+
+.wagon-section h3 {
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+}
+
+.seat-map {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  gap: 12px;
+  padding: 20px;
+  background: var(--dark-surface-light);
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* OBilet tarzı otobüs koltuk düzeni */
+.obilet-seat-map {
+  width: 100%;
+  padding: 15px;
+  background: var(--dark-surface-light);
+  border-radius: 20px;
+  margin-bottom: 30px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.bus-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.bus-front,
+.bus-back {
+  text-align: center;
+  padding: 15px 10px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(236, 72, 153, 0.2) 100%);
+  border-radius: 12px;
+  border: 2px solid var(--primary-color);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  min-width: 50px;
+  max-width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.bus-front-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.bus-front-label,
+.bus-back-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.bus-back {
+  background: var(--dark-surface);
+  border-color: var(--border-color);
+}
+
+.bus-back-label {
+  color: var(--text-secondary);
+}
+
+.bus-seats-area {
+  background: var(--dark-surface);
+  border-radius: 16px;
+  padding: 15px 10px;
+  border: 1px solid var(--border-color);
+  flex: 1;
+  overflow: hidden;
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+.seats-container {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow: hidden;
+}
+
+.seat-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3px;
+  width: 60px;
+  flex-shrink: 0;
+  min-width: 60px;
+  position: relative;
+  isolation: isolate;
+}
+
+.seat-group {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.left-group {
+  width: 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  order: 3;
+}
+
+.right-group {
+  width: 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  order: 1;
+}
+
+.aisle {
+  width: 300px;
+  height: 2px;
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  order: 2;
+  margin: 2px 0;
+  overflow: visible;
+  z-index: 1;
+}
+
+.aisle::before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  background: var(--border-color);
+  border-radius: 1px;
+  opacity: 0.4;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.seat {
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+  min-height: 45px;
+  border: 2px solid var(--border-color);
+  background: white;
+  color: #374151;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 12px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.seat .seat-number {
+  display: flex !important;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: inherit;
+  line-height: 1;
+}
+
+.seat-number {
+  font-size: 14px;
+  font-weight: 700;
+  color: inherit;
+  z-index: 1;
+  position: relative;
+}
+
+.seat.available {
+  background: white;
+  border-color: #d1d5db;
+  color: #374151;
+}
+
+.seat.available:hover:not(:disabled) {
+  border-color: var(--primary-color);
+  background: rgba(99, 102, 241, 0.1);
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+.seat.selected {
+  background: #22c55e;
+  border-color: #22c55e;
+  color: white;
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.4);
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.seat.selected .seat-number {
+  color: white;
+  font-weight: 800;
+}
+
+.seat.reserved {
+  background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%) !important;
+  border-color: #8b5cf6 !important;
+  border-style: dashed !important;
+  border-width: 2px !important;
+  color: white !important;
+  cursor: not-allowed !important;
+  opacity: 0.85 !important;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(139, 92, 246, 0.3) !important;
+}
+
+.seat.reserved .seat-number {
+  color: white !important;
+  font-weight: 600;
+}
+
+.seat.dolu {
+  background: linear-gradient(135deg, #ec4899 0%, #db2777 100%) !important;
+  border-color: #db2777 !important;
+  border-style: solid !important;
+  border-width: 2px !important;
+  color: white !important;
+  cursor: not-allowed !important;
+  opacity: 1 !important;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(219, 39, 119, 0.4) !important;
+}
+
+.seat.dolu .seat-number {
+  color: white !important;
+  font-weight: 800;
+}
+
+/* Kadın için pembe/kırmızı renk (opsiyonel - backend'den gender bilgisi gelirse) */
+.seat.reserved.female {
+  background: #f87171;
+  border-color: #f87171;
+}
+
+.seat.inactive {
+  background: var(--dark-surface);
+  border-color: var(--border-color);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.seat-legend {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: var(--dark-surface-light);
+  border-radius: 12px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.seat-legend-box {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  border: 2px solid var(--border-color);
+}
+
+.seat-legend-box.available {
+  background: var(--dark-surface);
+  border-color: var(--border-color);
+}
+
+.seat-legend-box.reserved {
+  background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+  border-color: #8b5cf6;
+  border-style: dashed;
+  opacity: 0.85;
+}
+
+.seat-legend-box.dolu {
+  background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+  border-color: #db2777;
+  border-style: solid;
+  opacity: 1;
+}
+
+.seat-legend-box.selected {
+  background: #22c55e;
+  border-color: #22c55e;
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.4);
+}
+
+.selected-seat-info {
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+  border-radius: 12px;
+  border: 2px solid var(--primary-color);
+  text-align: center;
+  margin-top: 30px;
+}
+
+.selected-seat-info h3 {
+  margin-bottom: 20px;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+}
+
+.selected-seat-info p {
+  margin-bottom: 12px;
+  color: var(--text-secondary);
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.selected-seat-info .label {
+  color: var(--text-secondary);
+}
+
+.selected-seat-info strong {
+  color: var(--text-primary);
+  font-size: 18px;
+}
+
+.selected-seat-info strong.price {
+  color: var(--primary-color);
+  font-size: 24px;
+}
+
+.reservation-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-reserve,
+.btn-purchase {
+  width: 100%;
+  max-width: 300px;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.btn-purchase {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border: none !important;
+  color: white !important;
+}
+
+.btn-purchase:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+@media (max-width: 768px) {
+  .trip-header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .trip-title {
+    font-size: 1.5rem;
+  }
+
+  .btn-back {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .trip-route {
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px 20px;
+  }
+
+  .route-city.departure {
+    border-right: none;
+    border-bottom: 2px solid rgba(99, 102, 241, 0.3);
+    padding-right: 0;
+    padding-bottom: 25px;
+  }
+
+  .route-city.arrival {
+    border-left: none;
+    border-top: 2px solid rgba(236, 72, 153, 0.3);
+    padding-left: 0;
+    padding-top: 25px;
+  }
+
+  .route-arrow-container {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .route-line {
+    width: 3px;
+    height: 40px;
+  }
+
+  .route-arrow {
+    transform: rotate(90deg);
+  }
+
+  .city-name {
+    font-size: 1.8rem;
+  }
+
+  .trip-summary {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .summary-item {
+    padding: 10px;
+  }
+
+  .obilet-seat-map {
+    padding: 20px 15px;
+  }
+
+  .bus-seats-area {
+    padding: 15px;
+  }
+
+  .seat-row {
+    gap: 10px;
+  }
+
+  .seat-group {
+    gap: 6px;
+  }
+
+  .left-group {
+    max-width: 100px;
+  }
+
+  .right-group {
+    max-width: 200px;
+  }
+
+  .aisle {
+    width: 30px;
+    margin: 0 5px;
+  }
+
+  .seat {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    font-size: 12px;
+  }
+
+  .seat-number {
+    font-size: 13px;
+  }
+
+  .seat-map {
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 8px;
+  }
+}
+

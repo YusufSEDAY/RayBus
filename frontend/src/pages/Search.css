@@ -1,0 +1,274 @@
+.search-page {
+  min-height: calc(100vh - 80px);
+  padding: 40px 0;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.page-title-emoji {
+  font-family: system-ui, -apple-system, "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", sans-serif; /* Default font - emoji desteği ile */
+  -webkit-text-fill-color: initial !important; /* Gradient'ı kaldır */
+  background: none !important; /* Gradient'ı kaldır */
+  background-clip: initial !important; /* Gradient'ı kaldır */
+  color: var(--text-primary) !important; /* Varsayılan metin rengi */
+  font-size: 3rem;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+}
+
+.search-card {
+  margin-bottom: 40px;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.search-form button {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  font-size: 18px;
+  padding: 16px 32px;
+}
+
+.results-section {
+  margin-top: 40px;
+}
+
+.results-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.results-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.info-text {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.error-card {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: var(--danger-color);
+  color: var(--danger-color);
+}
+
+.trip-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.trip-card {
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.trip-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.trip-card-content {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.trip-route-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.route-time {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.route-time .time {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.route-time .city {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.route-arrow {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.trip-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-item {
+  display: flex;
+  gap: 8px;
+}
+
+.detail-item .label {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.detail-item .value {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.trip-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.trip-price .price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+@media (max-width: 968px) {
+  .trip-card-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .trip-price {
+    align-items: stretch;
+  }
+
+  .trip-price .price {
+    text-align: center;
+  }
+  
+  .price-section {
+    align-items: center;
+  }
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--dark-surface);
+  color: var(--text-primary);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.input-group select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sub-select {
+  margin-top: 8px;
+  font-size: 14px;
+  padding: 8px 12px;
+}
+
+.route-time .station {
+  display: block;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.route-time .date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.detail-item .highlight {
+  color: var(--success-color);
+  font-weight: 700;
+}
+
+.price-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.price-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+  }
+
+  .search-form .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+

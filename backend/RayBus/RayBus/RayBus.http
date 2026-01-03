@@ -1,0 +1,6 @@
+@RayBus_HostAddress = http://localhost:5020
+
+GET {{RayBus_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
