@@ -52,6 +52,5 @@ Database objects are categorized into 5 primary schemas:
 * **[Güven ZENCİR]**
 * **[Yusuf Erdem GÜNGÖR]**
 * 
-
 ---
 *This project was developed as an academic study for the Database Programming course.*
